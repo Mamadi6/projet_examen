@@ -1,3 +1,27 @@
-<h2 class="text-center">Détail sur le client xxx</h2>
+<h2 class="text-center">Détail sur le client <?= $user->getPrenom() ?></h2>
 
-<?= $user->getPrenom() ?>
+
+<table class="table table-striped">
+        <tr class="table-primary">
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Email</th>
+            <th>Mot de passe</th>
+            <th>Adresse</th>
+            <th>Télephone</th>
+            <th>Date</th>
+        </tr>
+
+    
+        <tr>
+            <td><?=$user->getId() ?></td>
+            <td><?=$user->getNom() ?></td>
+            <td><?=$user->getPrenom() ?></td>
+            <td><?=$user->getEmail() ?></td>
+            <td><?=$user->getPassword() ?></td>
+            <td><?=$user->getAdresse() ?></td>
+            <td><?=$user->getTelephone() ?></td>
+            <td><?=$user->getDateInscription() ?></td>
+
+        </tr>

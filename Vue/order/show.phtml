@@ -1,3 +1,19 @@
-<h2>Information sur la commande x</h2>
+<h2 class="text-center">Information sur la commande </h2>
 
-<?=$order->getStatut() ?>
+<table class="table table-striped">
+        <tr class="table-primary">
+            <th>Identifiant</th>
+            <th>Statut</th>
+            <th>Date de commande</th>
+            <th>Montant total</th>
+            <th>User</th>
+        </tr>
+
+    
+        <tr>
+            <td><?=$order->getId() ?></td>
+            <td><?=$order->getStatut() ?></td>
+            <td><?=$order->getDateCommande() ?></td>
+            <td><?=$order->getTotalMontant() ?></td>
+            <td><?=$order->getUser() ?></td>
+        </tr>

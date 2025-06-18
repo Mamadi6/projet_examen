@@ -8,6 +8,6 @@
     La photo du <?=$product->getNom() ?> ci-dessous<br>
     <img src="Public/images/<?=$product->getImage() ?>" width="280px" alt=""> <br>
 
-     <a href="?actionOrd=new&id=<?= $product->getId() ?>" class="btn btn-primary">Commandez</a>
+     <a href="?actionOrd=new&id=<?= $product->getId() && $product->getPrix() ?>" class="btn btn-primary">Commandez</a>
 
 </div>

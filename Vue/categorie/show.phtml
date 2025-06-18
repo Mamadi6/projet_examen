@@ -1,2 +1,15 @@
-<h2 class="text-center">Détail sur la catégorie xxx</h2>
-<?= $categorie->getNom() ?>
+<h2 class="text-center">Détail sur la catégorie <?= $categorie->getNom() ?></h2>
+
+<table class="table table-striped">
+        <tr class="table-primary">
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Description</th>
+        </tr>
+
+    
+        <tr>
+            <td><?=$categorie->getId() ?></td>
+            <td><?=$categorie->getNom() ?></td>
+            <td><?=$categorie->getDescription() ?></td>
+        </tr>
