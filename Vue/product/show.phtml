@@ -1,0 +1,13 @@
+<h2 class="text-center">Information sur notre produit</h2>
+
+<div class="text-center">
+    Voici les détails sur notre produit <?=$product->getNom() ?> . <br>
+    Sa description : <?=$product->getDescription() ?> <br>
+    Soo prix est : <?=$product->getPrix() ?> € <br>
+    Il est de catégorie : <?=$product->getCategorie() ?><br>
+    La photo du <?=$product->getNom() ?> ci-dessous<br>
+    <img src="Public/images/<?=$product->getImage() ?>" width="280px" alt=""> <br>
+
+     <a href="?actionOrd=new&id=<?= $product->getId() ?>" class="btn btn-primary">Commandez</a>
+
+</div>

@@ -1,0 +1,27 @@
+<h2 class="text-center">Liste des commandes</h2>
+
+<a href="?actionOrd=new" class="btn btn-primary my-2">Commandez</a>
+
+<table class="table table-striped">
+        <tr class="table-primary">
+            <th>Date commande</th>
+            <th>Statut</th>
+            <th>Total montant</th>
+            <th>User</th>
+            <th>Action</th>
+        </tr>
+
+        <?php foreach ($orders as $order): ?>
+            <tr>
+                <td><?=$order->getDateCommande() ?></td>
+                <td><?=$order->getStatut() ?></td>
+                <td><?=$order->getTotalMontant() ?></td>
+                <td><?=$order->getUser()->getPrenom() ?></td>
+                <td>
+                    <a href="?actionOrd=update&id=<?=$order->getId()?>"><i class="fa-solid fa-pen"></i></a> |
+                    <a href="?actionOrd=delete&id=<?=$order->getId()?>"><i class="fa-solid fa-trash"></i></a> |
+                    <a href="?actionOrd=show&id=<?=$order->getId()?>"><i class="fa-solid fa-eye"></i></a> |
+                </td>
+            </tr>
+        <?php endforeach; ?>
+</table>

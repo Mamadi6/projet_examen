@@ -1,0 +1,23 @@
+<h2 class="text-center">Nos produits disponibles</h2>
+
+<div class="row">
+    <?php foreach($products as $product): ?>
+        <div class="card col-4 m-1 p-0" style="width: 250px;">
+            <img src="Public/images/<?= $product->getImage() ?>" alt="plchldr.co" class="">
+            <div class="card-body">
+                <h5 class="card-title">
+                    Nom : <?= $product->getNom() ?><br>
+                    Prix : <?= $product->getPrix() ?>€<br>
+                </h5>
+                <p class="card-text">
+                    Description : <?= $product->getDescription() ?>
+                </p>
+                <p class="card-text">
+                    Categorie : <?= $product->getCategorie()->getNom() ?>
+                </p>
+                <a href="?accueilAction=panier&id=<?= $product->getId() ?>" class="btn btn-primary">Panier</a>
+                
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>

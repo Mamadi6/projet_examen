@@ -1,0 +1,33 @@
+<h2 class="text-center">Liste des produits</h2>
+
+<a href="?actionProd=new" class="btn btn-primary my-2">Ajouter</a>
+
+<table class="table table-striped">
+        <tr class="table-primary">
+            <th>Nom</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Stock</th>
+            <th>Categorie</th>
+            <th>Photo</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+
+        <?php foreach ($products as $product): ?>
+            <tr>
+                <td><?=$product->getNom() ?></td>
+                <td><?=$product->getDescription() ?></td>
+                <td><?=$product->getPrix() ?></td>
+                <td><?=$product->getStock() ?></td>
+                <td><?=$product->getCategorie()->getNom() ?></td>
+                <td><img src="Public/images/<?=$product->getImage() ?>" width="80px" alt=""> </td>
+                <td><?=$product->getDateCreation() ?></td>
+                <td>
+                    <a href="?actionProd=update&id=<?=$product->getId()?>"><i class="fa-solid fa-pen"></i></a> |
+                    <a href="?actionProd=delete&id=<?=$product->getId()?>"><i class="fa-solid fa-trash"></i></a> |
+                    <a href="?actionProd=show&id=<?=$product->getId()?>"><i class="fa-solid fa-eye"></i></a> |
+                </td>
+            </tr>
+        <?php endforeach; ?>
+</table>

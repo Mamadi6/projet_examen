@@ -1,0 +1,27 @@
+<h2 class="text-center">Liste des paniers</h2>
+
+<a href="?actionPan=new" class="btn btn-primary my-2">Panier</a>
+
+<table class="table table-striped">
+        <tr class="table-primary">     
+            <th>Quantité</th>
+            <th>Product</th>
+            <th>User</th>
+            <th>Date </th>
+            <th>Action</th>
+        </tr>
+
+        <?php foreach ($paniers as $panier): ?>
+            <tr>
+                <td><?=$panier->getQuantite() ?></td>
+                <td><?=$panier->getProduct()->getNom() ?></td>
+                <td><?=$panier->getUser()->getPrenom() ?></td>
+                <td><?=$panier->getDateAjout() ?></td>
+                <td>
+                    <a href="?actionPan=update&id=<?=$panier->getId()?>"><i class="fa-solid fa-pen"></i></a> |
+                    <a href="?actionPan=delete&id=<?=$panier->getId()?>"><i class="fa-solid fa-trash"></i></a> |
+                    <a href="?actionPan=show&id=<?=$panier->getId()?>"><i class="fa-solid fa-eye"></i></a> |
+                </td>
+            </tr>
+        <?php endforeach; ?>
+</table>
